@@ -1,107 +1,34 @@
+// Board.js
 import React, { useState } from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import Column from './Column';
 import './board.css';
 
 function Board() {
-  const [boardName, setBoardName] = useState("");
-  const [columns, setColumns] = useState([]);
-  const [ticketTitle, setTicketTitle] = useState("");
-  const [tickets, setTickets] = useState([]);
-
-  const handleDragEnd = (result) => {
-    // Behandlung des Drag-and-Drop-Vorgangs
-  };
+  const [columns, setColumns] = useState([
+    { id: 1, title: 'Backlog', tickets: [] },
+    { id: 2, title: 'Ready', tickets: [] },
+    { id: 3, title: 'Done', tickets: [] }
+  ]);
 
   const addColumn = () => {
-    const newColumnName = prompt("Geben Sie den Namen der Spalte ein:");
+    const newColumnName = prompt("Geben Sie den Namen der neuen Spalte ein:");
     if (newColumnName) {
       const newColumn = {
-        id: `column-${columns.length + 1}`,
-        name: newColumnName,
+        id: columns.length + 1,
+        title: newColumnName,
         tickets: []
       };
       setColumns([...columns, newColumn]);
     }
   };
 
-  const addTicket = () => {
-    const newTicketId = tickets.length + 1;
-    const newTicket = {
-      id: newTicketId,
-      title: ticketTitle,
-      description: `Description for Ticket ${newTicketId}`,
-      status: columns.length > 0 ? columns[0].id : "" // Setze das Ticket in die erste Spalte
-    };
-    setTickets([...tickets, newTicket]);
-    setTicketTitle("");
-  };
-
-  const handleInputChange = (e) => {
-    setTicketTitle(e.target.value);
-  };
-
-  const handleBoardNameChange = (e) => {
-    setBoardName(e.target.value);
-  };
-
   return (
     <div className="board">
-      <h1>Kanban Board: {boardName}</h1>
-      <div>
-        <label>
-          Boardname:
-          <input
-            type="text"
-            value={boardName}
-            onChange={handleBoardNameChange}
-          />
-        </label>
-      </div>
-      <div>
-        <button onClick={addColumn}>Neue Spalte hinzufügen</button>
-      </div>
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="columns-container">
-          {columns.map((column, index) => (
-            <div key={column.id} className="column">
-              <h2>{column.name}</h2>
-              <Droppable droppableId={column.id} key={column.id}>
-                {(provided) => (
-                  <div
-                    {...provided.droppableProps}
-                    ref={provided.innerRef}
-                    className="ticket-list"
-                  >
-                    {column.tickets.map((ticket, index) => (
-                      <Draggable key={ticket.id} draggableId={ticket.id.toString()} index={index}>
-                        {(provided) => (
-                          <div
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                            className="ticket"
-                          >
-                            {ticket.title}
-                          </div>
-                        )}
-                      </Draggable>
-                    ))}
-                    {provided.placeholder}
-                  </div>
-                )}
-              </Droppable>
-            </div>
-          ))}
-        </div>
-      </DragDropContext>
-      <div>
-        <input
-          type="text"
-          value={ticketTitle}
-          onChange={handleInputChange}
-          placeholder="Tickettitel"
-        />
-        <button onClick={addTicket}>Neues Ticket erstellen</button>
+      <div className="columns-container">
+        {columns.map(column => (
+          <Column key={column.id} column={column} />
+        ))}
+        <div className="add-column" onClick={addColumn}>+</div>
       </div>
     </div>
   );

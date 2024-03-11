@@ -1,7 +1,7 @@
 .board {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: #f5f5f5; /* Leicht abgetönte Hintergrundfarbe */
+    background-color: #fff; /* Leicht abgetönte Hintergrundfarbe */
   }
   
   h1 {
@@ -19,8 +19,8 @@
   }
   
   .column {
-    background-color: #fdf5e6; /* Hellgelbe Hintergrundfarbe */
-    border: 1px solid #f0e68c; /* Dunklerer Gelb-Rahmen */
+    background-color: #fff; /* Hellgelbe Hintergrundfarbe */
+    border: 1px solid #ccc; /* Dunklerer Gelb-Rahmen */
     border-radius: 4px;
     padding: 10px;
     margin-right: 10px;
