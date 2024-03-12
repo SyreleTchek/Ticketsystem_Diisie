@@ -1,0 +1,112 @@
+/* Header.css */
+
+/* Allgemeine Stile, die auf allen Bildschirmgrößen gelten sollen */
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu.show {
+  display: block;
+  padding: 5px;
+}
+.dropdown-option {
+  display: block;
+  padding: 5px;
+}
+
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+
+.software-name {
+  font-family: serif;
+  font-size: 24px; /* Beispiel: Größere Schriftgröße */
+  font-weight: bold; /* Beispiel: Fettschrift */
+  color: #333; /* Beispiel: Dunkelgraue Textfarbe */
+  text-transform: uppercase; /* Beispiel: Großbuchstaben */
+  margin-right: 20px;
+}
+.icon {
+  color: #007bff; /* Hier die gewünschte Farbe setzen */
+}
+.header-functions {
+  font-family: serif;
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+  justify-content: space-between;
+  color: #333;
+}
+
+.function {
+  cursor: pointer;
+  color: #333; /* Dunkelgraue Textfarbe */
+  transition: color 0.3s; /* Übergangseffekt für eine sanfte Farbänderung */
+}
+
+.function:hover {
+  color: #007bff; /* Blaue Farbe bei Hover */
+}
+
+.function.active {
+  color: #007bff; /* Blaue Farbe für den aktiven Bereich */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+/* Media Queries für verschiedene Bildschirmgrößen */
+
+/* Tablet-Landscape (1024px) */
+@media (max-width: 1024px) {
+  .software-name {
+      font-size: 18px; /* Beispiel: Kleinere Schriftgröße für den Softwarenamen */
+  }
+}
+
+/* Tablet-Portrait (768px) */
+@media (max-width: 768px) {
+  .software-name {
+      font-size: 16px; /* Beispiel: Noch kleinere Schriftgröße für den Softwarenamen */
+      margin-right: 10px; /* Beispiel: Weniger Abstand zwischen dem Softwarenamen und den Funktionen */
+  }
+  .function {
+      font-size: 14px; /* Beispiel: Kleinere Schriftgröße für die Funktionen */
+  }
+}
+
+/* Smartphone (480px) */
+@media (max-width: 480px) {
+  .software-name {
+      font-size: 14px; /* Beispiel: Sehr kleine Schriftgröße für den Softwarenamen */
+  }
+  .function {
+      font-size: 12px; /* Beispiel: Sehr kleine Schriftgröße für die Funktionen */
+  }
+}
