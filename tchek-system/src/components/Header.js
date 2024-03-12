@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './header.css'; // Importiere das Stylesheet für den Header
 import { FaAngleUp , FaAngleDown , FaCog, FaTasks, FaProjectDiagram, FaChartBar, FaUsers } from 'react-icons/fa'; // Importiere Icons aus React Icons
+import ProfileMenu from './profil_menu.js'
 
 function Header() {
   // Zustand für die aktuell ausgewählte Sektion und die Dropdown-Menüs
@@ -46,7 +47,7 @@ function Header() {
   };
   return (
     <div className="header-container">
-      <span className="software-name"><FaCog className="icon" /> Tchek Systems</span>
+      <span className="software-name"><FaCog className="icon" /> tchek.systems</span>
       <div className="header-functions">
         <div className="dropdown-wrapper">
           <span className={`function ${currentSection === "Ihre Aufgaben" ? "active" : ""}`} onClick={toggleTasksMenu}>
@@ -101,6 +102,7 @@ function Header() {
           )}
         </div>
       </div>
+      <ProfileMenu />
     </div>
   );
 }

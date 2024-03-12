@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
-  background-color: #f0f0f0;
+  border-bottom: 1px solid goldenrod;
+  background-color: gold;
   position: relative;
 }
 
@@ -32,31 +32,30 @@
   position: relative;
   display: inline-block;
 }
-
+.dropdown-option:hover {
+  background-color: #f0f0f0;
+}
 
 .software-name {
   font-family: serif;
   font-size: 24px; /* Beispiel: Größere Schriftgröße */
   font-weight: bold; /* Beispiel: Fettschrift */
-  color: #333; /* Beispiel: Dunkelgraue Textfarbe */
-  text-transform: uppercase; /* Beispiel: Großbuchstaben */
+  color: black; /* Beispiel: Dunkelgraue Textfarbe */
   margin-right: 20px;
 }
 .icon {
-  color: #007bff; /* Hier die gewünschte Farbe setzen */
+  color: black; /* Hier die gewünschte Farbe setzen */
 }
 .header-functions {
   font-family: serif;
   display: flex;
   gap: 20px;
   flex-grow: 1;
-  justify-content: space-between;
-  color: #333;
 }
 
 .function {
   cursor: pointer;
-  color: #333; /* Dunkelgraue Textfarbe */
+  color: black; /* Dunkelgraue Textfarbe */
   transition: color 0.3s; /* Übergangseffekt für eine sanfte Farbänderung */
 }
 
@@ -66,19 +65,6 @@
 
 .function.active {
   color: #007bff; /* Blaue Farbe für den aktiven Bereich */
-}
-
-.user-profile {
-  display: flex;
-  align-items: center;
-}
-
-.user-icon {
-  margin-right: 10px;
-}
-
-.username {
-  font-weight: bold;
 }
 
 /* Media Queries für verschiedene Bildschirmgrößen */
