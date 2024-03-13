@@ -2,7 +2,11 @@
 import React, { useState } from 'react';
 import './header.css'; // Importiere das Stylesheet für den Header
 import { FaAngleUp , FaAngleDown , FaCog, FaTasks, FaProjectDiagram, FaChartBar, FaUsers } from 'react-icons/fa'; // Importiere Icons aus React Icons
-import ProfileMenu from './profil_menu.js'
+import ProfileMenu from './ProfilMenu.js'
+import HelpMenu from './HelpMenu.js';
+import SettingsMenu from './SettingsMenu.js';
+import SearchBar from './SearchBar.js';
+import NotificationBell from './NotificationBell.js';
 
 function Header() {
   // Zustand für die aktuell ausgewählte Sektion und die Dropdown-Menüs
@@ -102,6 +106,10 @@ function Header() {
           )}
         </div>
       </div>
+      <SearchBar />
+      <SettingsMenu />
+      <NotificationBell />
+      <HelpMenu />
       <ProfileMenu />
     </div>
   );

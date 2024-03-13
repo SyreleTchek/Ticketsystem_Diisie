@@ -1,7 +1,7 @@
 // ProfileMenu.js
 import React, { useState, useRef, useEffect } from 'react';
 import { FaUser, FaCog, FaSignOutAlt, FaBell } from 'react-icons/fa';
-import './profil_menu.css'
+import './profilMenu.css'
 
 function ProfileMenu() {
   const [showProfileMenu, setShowProfileMenu] = useState(false); // Zustand für das Profilmenü

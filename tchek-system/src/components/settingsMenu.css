@@ -1,0 +1,32 @@
+/* settingsMenu.css */
+.settings-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .settings-icon {
+    cursor: pointer;
+  }
+  
+  .settings-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    min-width: 160px;
+    z-index: 10;
+  }
+  
+  .settings-option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .settings-option span {
+    margin-left: 8px;
+  }
+  

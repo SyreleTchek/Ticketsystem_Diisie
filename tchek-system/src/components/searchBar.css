@@ -1,0 +1,33 @@
+/* searchBar.css */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+    padding: 4px;
+    margin-right: 20px;
+  }
+  
+  .search-icon {
+    margin-right: 8px;
+    color: white;
+  }
+  
+  .search-input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  .search-button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
